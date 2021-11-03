@@ -15,4 +15,6 @@ EXPOSE 4444
 
 WORKDIR ${HOME_DIR}
 
+RUN chmod -R 755 ${HOME_DIR}
+# CMD pwd && ls -Al .
 CMD ["sh", "-c", "java -Dwdm.cachePath=${CACHE_DIR} -Dwdm.resolutionCachePath=${HOME_DIR} -jar ${WDM_JAR} ${ARGS}"]
